@@ -1,8 +1,8 @@
 AWS.config.region = 'us-east-1'; // Region
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'us-east-1:XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX',
+    IdentityPoolId: 'us-east-1:1df0af9e-96c0-46fc-ac78-501ab2d77357',
     Logins: {
-      'cognito-idp.us-east-1.amazonaws.com/us-east-1_XXXXXXXXX': JSON.parse(localStorage.getItem('token'))
+      'cognito-idp.us-east-1.amazonaws.com/us-east-1_wq4XYCqRL': JSON.parse(localStorage.getItem('token'))
     }
 });
 
@@ -72,14 +72,14 @@ $('#signin').submit(function(e){
   e.preventDefault();
   AWSCognito.config.region = 'us-east-1';
   AWSCognito.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'us-east-1_XXXXXXXXX'
+    IdentityPoolId: 'us-east-1:1df0af9e-96c0-46fc-ac78-501ab2d77357'
   });
   // Need to provide placeholder keys unless unauthorised user access is enabled for user pool
   AWSCognito.config.update({accessKeyId: 'anything', secretAccessKey: 'anything'});
 
   var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool({ 
-    UserPoolId : 'us-east-1_XXXXXXXXX',
-    ClientId : 'YOUR-APP-CLIENT-ID'
+    UserPoolId : 'us-east-1_wq4XYCqRL',
+    ClientId : '5ueq57bdp4kgdnv18llo56jamf'
   });
 
   var authenticationData = {
